@@ -1,0 +1,86 @@
+======================================================================
+   CUSTOMER CHURN PREDICTION — MODEL RESULTS
+======================================================================
+
+----------------------------------------------------------------------
+  MODEL PERFORMANCE
+----------------------------------------------------------------------
+
+  Model                           Accuracy     ROC-AUC
+  ────────────────────────────────────────────────────
+  Logistic Regression               0.7395      0.8396  ★ Best
+  Random Forest                     0.7892      0.8226
+  ────────────────────────────────────────────────────
+  Winner (by ROC-AUC): Logistic Regression
+
+----------------------------------------------------------------------
+  CONFUSION MATRICES
+----------------------------------------------------------------------
+
+  Logistic Regression:
+                        Predicted
+                    No Churn   Churn
+    Actual No Churn     744       291
+    Actual Churn         76       298
+
+  Random Forest:
+                        Predicted
+                    No Churn   Churn
+    Actual No Churn     931       104
+    Actual Churn        193       181
+
+----------------------------------------------------------------------
+  CLASSIFICATION REPORTS
+----------------------------------------------------------------------
+
+  Logistic Regression:
+  (see console output for full report)
+
+  Random Forest:
+  (see console output for full report)
+
+----------------------------------------------------------------------
+  TOP 10 FEATURES INFLUENCING CHURN
+----------------------------------------------------------------------
+
+  Rank  Feature                     Coefficient
+  ─────────────────────────────────────────────
+  1     tenure                         -1.0995
+  2     MonthlyCharges           +       0.7372
+  3     Contract                       -0.6345
+  4     TotalCharges             +       0.4255
+  5     PhoneService                   -0.2854
+  6     OnlineSecurity                 -0.2464
+  7     TechSupport                    -0.2201
+  8     PaperlessBilling         +       0.1793
+  9     InternetService          +       0.1619
+  10    OnlineBackup                   -0.1281
+
+  (+) coefficient → increases churn probability
+  (−) coefficient → decreases churn probability
+
+----------------------------------------------------------------------
+  BUSINESS INSIGHTS
+----------------------------------------------------------------------
+
+  1. Customers on month-to-month contracts exhibit significantly higher churn probability. Incentivising longer-term contracts could reduce attrition.
+
+  2. Tenure is a strong negative predictor — early-tenure engagement programs (first 6-12 months) are critical.
+
+  3. Customers without online security, tech support, or online backup churn at higher rates. Bundling these services may improve retention.
+
+  4. Higher monthly charges correlate with elevated churn risk. Consider loyalty discounts for high-spending customers.
+
+  5. Fiber-optic internet users show higher churn compared to DSL. Investigate service-quality and pricing satisfaction.
+
+  6. Electronic-check payment method is associated with higher churn. Encouraging auto-pay could reduce friction-based churn.
+
+----------------------------------------------------------------------
+  SAVED ARTEFACTS
+----------------------------------------------------------------------
+  outputs/confusion_matrix.png
+  outputs/roc_curve.png
+  outputs/feature_importance.png
+  outputs/model_results.txt
+
+======================================================================
